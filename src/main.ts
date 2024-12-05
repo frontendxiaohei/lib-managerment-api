@@ -9,6 +9,17 @@ async function bootstrap() {
   app.useGlobalPipes(new ValidationPipe({
     transform: true, // 转为dto实例类型
   }))
+
+
+  app.enableCors({
+    origin: true,
+    credentials: true,
+  });
+
+  // app.useStaticAssets('uploads');
+
+  
+
   await app.listen(3000);
 }
 bootstrap();
